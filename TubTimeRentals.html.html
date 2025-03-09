@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tub Time Rentals | Luxury Hot Tub Experiences</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .top-banner {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.2em;
+        }
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .nav-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .logo {
+            max-width: 150px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #222;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .cta-button {
+            background: #ff7f50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* Slogan Styling - Fixed Below Navbar */
+        .slogan {
+            text-align: center;  
+            font-size: 24px;      
+            font-weight: bold;    
+            color: #333;          
+            margin-top: 80px; /* Ensures spacing below fixed navbar */
+            width: 100%;          
+            display: block;      
+        }
+
+        .hero-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+        }
+        .section-box {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .image-container img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-banner">Relax in Luxury - Rent Your Hot Tub Today!</div>
+    
+    <header>
+        <div class="nav-container">
+            <img src="C:\Users\leeja\OneDrive - TUS MM\Personal HTML\TubTimeRentals\Screenshot 2025-03-09 152639.png"  
+                 alt="Tub Time Rentals Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#amenities">Amenities</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#booking" class="cta-button">Book Now</a>
+        </div>
+    </header>
+
+    <!-- Slogan moved BELOW the fixed header -->
+    <div class="slogan">Relax, Recharge, Repeat.</div>
+
+    <section id="hero">
+        <img src="C:\Users\leeja\OneDrive - TUS MM\Personal HTML\TubTimeRentals\tubtime renatls stock images.jpeg" alt="Luxurious Hot Tub Experience" class="hero-image">
+    </section>
+    
+    <section id="about" class="section-box">
+        <h2>About Us</h2>
+        <p>Based in Tipperary, Tub Time Rentals is run by Cathal & Dan T, offering premium hot tub experiences for any occasion.</p>
+        <div class="image-container">
+            <img src="C:\Users\leeja\OneDrive - TUS MM\Personal HTML\TubTimeRentals\6451791cv13d.avif" alt="Premium Hot Tub Setup">
+        </div>
+    </section>
+    
+    <section id="pricing" class="section-box">
+        <h2>Hot Tub Rentals</h2>
+        <div class="pricing-container">
+            <div class="pricing-box">
+                <h3>Small Tub</h3>
+                <p>€150 for 3 days</p>
+            </div>
+            <div class="pricing-box">
+                <h3>Large Tub</h3>
+                <p>€250 for 3 days</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="amenities" class="section-box">
+        <h2>Special Amenities</h2>
+        <p>Every rental includes complimentary champagne & chocolates.</p>
+        <div class="image-container">
+            <img src="C:\Users\leeja\OneDrive - TUS MM\Personal HTML\TubTimeRentals\OIP.jpeg" alt="Champagne and Chocolates">
+        </div>
+    </section>
+    
+    <section id="contact" class="section-box">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:info@tubtimerentals.com">info@tubtimerentals.com</a></p>
+        <p>Follow us on <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Tub Time Rentals. All rights reserved.</p>
+    </footer>
+</body>
+</html>
