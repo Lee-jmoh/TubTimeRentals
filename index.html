@@ -106,6 +106,15 @@
 </head>
 
 <body>
+    
+<h2>Book Your Tub Time</h2>
+<label for="bookingDate">Select a Date:</label>
+<input type="date" id="bookingDate" min="" required>
+<button onclick="bookNow()">Book Now</button>
+<p id="bookingMessage"></p>
+
+
+    
     <div class="top-banner">Relax in Luxury - Rent Your Hot Tub Today!</div>
     
     <header>
@@ -139,7 +148,34 @@
             <img src="C:\Users\leeja\OneDrive - TUS MM\Personal HTML\TubTimeRentals\6451791cv13d.avif" alt="Premium Hot Tub Setup">
         </div>
     </section>
-    
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Define unavailable dates (YYYY-MM-DD format)
+        const unavailableDates = ["2025-03-15", "2025-03-20", "2025-03-25"];
+
+        // Set min date to today
+        const today = new Date().toISOString().split("T")[0];
+        document.getElementById("bookingDate").setAttribute("min", today);
+
+        document.getElementById("bookingDate").addEventListener("input", function () {
+            const selectedDate = this.value;
+            if (unavailableDates.includes(selectedDate)) {
+                alert("Sorry, this date is fully booked. Please select another.");
+                this.value = ""; // Reset selection
+            }
+        });
+    });
+
+    function bookNow() {
+        const selectedDate = document.getElementById("bookingDate").value;
+        if (!selectedDate) {
+            alert("Please select a valid date.");
+            return;
+        }
+        document.getElementById("bookingMessage").innerHTML = `✅ Your booking for <strong>${selectedDate}</strong> is confirmed!`;
+    }
+</script>
+
     <section id="pricing" class="section-box">
         <h2>Hot Tub Rentals</h2>
         <div class="pricing-container">
