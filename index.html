@@ -29,18 +29,24 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
+            padding: 10px 20px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
         .nav-container {
             display: flex;
             align-items: center;
-            width: 100%;
             justify-content: space-between;
+            width: 100%;
         }
         .logo {
-            max-width: 150px;
+            max-width: 120px; /* Adjusted logo size */
+            height: auto;
+        }
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: center; /* Centers the navbar */
         }
         nav ul {
             list-style: none;
@@ -48,33 +54,40 @@
             gap: 20px;
             padding: 0;
             margin: 0;
+            align-items: center;
+        }
+        nav ul li {
+            display: flex;
+            align-items: center;
         }
         nav a {
             text-decoration: none;
             color: #222;
             font-weight: bold;
             font-size: 1.1em;
+            padding: 10px;
         }
         .cta-button {
             background: #ff7f50;
             color: white;
-            padding: 10px 20px;
+            padding: 8px 15px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
+            transition: background 0.3s;
         }
-        
-        /* Slogan Styling - Fixed Below Navbar */
+        .cta-button:hover {
+            background: #e06b40;
+        }
         .slogan {
             text-align: center;  
             font-size: 24px;      
             font-weight: bold;    
             color: #333;          
-            margin-top: 80px; /* Ensures spacing below fixed navbar */
+            margin-top: 80px; 
             width: 100%;          
             display: block;      
         }
-
         .hero-image {
             width: 100%;
             max-height: 500px;
@@ -102,25 +115,50 @@
             background: #222;
             color: white;
         }
+        /* Booking Section Styles */
+        .booking-container {
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+        .booking-container label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .booking-container input, .booking-container button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .booking-container button {
+            background: #ff7f50;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        .booking-container button:hover {
+            background: #e06b40;
+        }
+        #bookingMessage {
+            margin-top: 15px;
+            font-weight: bold;
+            color: green;
+        }
     </style>
 </head>
 
 <body>
-    
-<h2>Book Your Tub Time</h2>
-<label for="bookingDate">Select a Date:</label>
-<input type="date" id="bookingDate" min="" required>
-<button onclick="bookNow()">Book Now</button>
-<p id="bookingMessage"></p>
-
-
-    
     <div class="top-banner">Relax in Luxury - Rent Your Hot Tub Today!</div>
-    
+
     <header>
         <div class="nav-container">
-            <img src="C:\Users\leeja\OneDrive - TUS MM\Personal HTML\TubTimeRentals\Screenshot 2025-03-09 152639.png"  
-                 alt="Tub Time Rentals Logo" class="logo">
+            <img src="C:\New folder\Logo.png" alt="Tub Time Rentals Logo" class="logo">
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
@@ -128,54 +166,40 @@
                     <li><a href="#amenities">Amenities</a></li>
                     <li><a href="#reviews">Reviews</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#booking" class="cta-button">Book Now</a></li> <!-- Book Now inside navbar -->
                 </ul>
             </nav>
-            <a href="#booking" class="cta-button">Book Now</a>
         </div>
     </header>
 
-    <!-- Slogan moved BELOW the fixed header -->
     <div class="slogan">Relax, Recharge, Repeat.</div>
 
     <section id="hero">
-        <img src="C:\Users\leeja\OneDrive - TUS MM\Personal HTML\TubTimeRentals\tubtime renatls stock images.jpeg" alt="Luxurious Hot Tub Experience" class="hero-image">
+        <img src="C:\New folder\724b0a48-d4a1-4e7e-802d-e576a61f1b63.webp" alt="Luxurious Hot Tub Experience" class="hero-image">
     </section>
-    
+
+  
+    <section id="booking" class="section-box">
+        <h2>Book Your Hot Tub Rental</h2>
+        <div class="booking-container">
+            <label for="bookingDate">Select a Date:</label>
+            <input type="date" id="bookingDate" min="">
+            <button onclick="bookNow()">Book Now</button>
+            <p id="bookingMessage"></p>
+        </div>
+    </section>
+	
     <section id="about" class="section-box">
         <h2>About Us</h2>
         <p>Based in Tipperary, Tub Time Rentals is run by Cathal & Dan T, offering premium hot tub experiences for any occasion.</p>
         <div class="image-container">
-            <img src="C:\Users\leeja\OneDrive - TUS MM\Personal HTML\TubTimeRentals\6451791cv13d.avif" alt="Premium Hot Tub Setup">
+            <img src="C:\New folder\tubpic1.jpeg" alt="Premium Hot Tub Setup">
         </div>
     </section>
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Define unavailable dates (YYYY-MM-DD format)
-        const unavailableDates = ["2025-03-15", "2025-03-20", "2025-03-25"];
-
-        // Set min date to today
-        const today = new Date().toISOString().split("T")[0];
-        document.getElementById("bookingDate").setAttribute("min", today);
-
-        document.getElementById("bookingDate").addEventListener("input", function () {
-            const selectedDate = this.value;
-            if (unavailableDates.includes(selectedDate)) {
-                alert("Sorry, this date is fully booked. Please select another.");
-                this.value = ""; // Reset selection
-            }
-        });
-    });
-
-    function bookNow() {
-        const selectedDate = document.getElementById("bookingDate").value;
-        if (!selectedDate) {
-            alert("Please select a valid date.");
-            return;
-        }
-        document.getElementById("bookingMessage").innerHTML = `✅ Your booking for <strong>${selectedDate}</strong> is confirmed!`;
-    }
-</script>
-
+    
+	
+	
+	
     <section id="pricing" class="section-box">
         <h2>Hot Tub Rentals</h2>
         <div class="pricing-container">
@@ -194,7 +218,7 @@
         <h2>Special Amenities</h2>
         <p>Every rental includes complimentary champagne & chocolates.</p>
         <div class="image-container">
-            <img src="C:\Users\leeja\OneDrive - TUS MM\Personal HTML\TubTimeRentals\OIP.jpeg" alt="Champagne and Chocolates">
+            <img src="C:\New folder\champagne.jpeg" alt="Champagne and Chocolates">
         </div>
     </section>
     
@@ -206,6 +230,38 @@
     
     <footer>
         <p>&copy; 2025 Tub Time Rentals. All rights reserved.</p>
-    </footer>
+    <!-- </footer -->
+	
+	
+	
+	
+	<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Define unavailable dates (YYYY-MM-DD format)
+            const unavailableDates = ["2025-03-15", "2025-03-20", "2025-03-25"];
+
+            // Set the minimum date to today
+            const today = new Date().toISOString().split("T")[0];
+            document.getElementById("bookingDate").setAttribute("min", today);
+
+            // Prevent selection of unavailable dates
+            document.getElementById("bookingDate").addEventListener("input", function () {
+                const selectedDate = this.value;
+                if (unavailableDates.includes(selectedDate)) {
+                    alert("Sorry, this date is fully booked. Please select another.");
+                    this.value = ""; // Reset selection
+                }
+            });
+        });
+
+        function bookNow() {
+            const selectedDate = document.getElementById("bookingDate").value;
+            if (!selectedDate) {
+                alert("Please select a valid date.");
+                return;
+            }
+            document.getElementById("bookingMessage").innerHTML = `✅ Your booking for <strong>${selectedDate}</strong> is confirmed!`;
+        }
+	
 </body>
 </html>
