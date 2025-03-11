@@ -39,10 +39,10 @@
             justify-content: space-between;
             width: 100%;
         }
-        .logo {
-            max-width: 120px; /* Adjusted logo size */
-            height: auto;
-        }
+    .logo {
+    width: 120px;  /* Reduced size */
+    height: auto;  /* Maintains aspect ratio */
+}
         nav {
             flex: 1;
             display: flex;
@@ -88,11 +88,12 @@
             width: 100%;          
             display: block;      
         }
-        .hero-image {
-            width: 100%;
-            max-height: 500px;
-            object-fit: cover;
-        }
+      .hero-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    display: block; /* Ensures proper spacing */
+}
         .section-box {
             max-width: 1100px;
             margin: 40px auto;
@@ -156,29 +157,28 @@
 <body>
     <div class="top-banner">Relax in Luxury - Rent Your Hot Tub Today!</div>
 
-  <header>
+<header>
     <div class="nav-container">
-        <img src="Logo.png" alt="Tub Time Rentals Logo" style="width: 120px; height: auto;">
+        <img src="Logo.png" alt="Tub Time Rentals Logo" class="logo">
         <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#amenities">Amenities</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#booking" class="cta-button">Book Now</a></li> <!-- Book Now inside navbar -->
+            </ul>
+        </nav>
+    </div>
+</header>
 
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#amenities">Amenities</a></li>
-                    <li><a href="#reviews">Reviews</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#booking" class="cta-button">Book Now</a></li> <!-- Book Now inside navbar -->
-                </ul>
-		class="slogan">Relax, Recharge, Repeat.
+<div class="slogan">Relax, Recharge, Repeat.</div>
 
-            </nav>
-        </div>
-    </header>
+<section id="hero">
+    <img src="724b0a48-d4a1-4e7e-802d-e576a61f1b63.webp" alt="Luxurious Hot Tub Experience" class="hero-image">
+</section>
 
-
-    <section id="hero">
-<img src="images/724b0a48-d4a1-4e7e-802d-e576a61f1b63.webp" alt="Luxurious Hot Tub Experience" class="hero-image">
-    </section>
   
     <section id="booking" class="section-box">
         <h2>Book Your Hot Tub Rental</h2>
